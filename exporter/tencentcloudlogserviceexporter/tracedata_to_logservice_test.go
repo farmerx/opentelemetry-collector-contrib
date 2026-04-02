@@ -5,7 +5,6 @@ package tencentcloudlogserviceexporter
 
 import (
 	"fmt"
-	"net/http"
 	"sort"
 	"testing"
 	"time"
@@ -13,7 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.opentelemetry.io/collector/pdata/ptrace"
-	conventions "go.opentelemetry.io/otel/semconv/v1.6.1"
+	conventions "go.opentelemetry.io/otel/semconv/v1.39.0"
 )
 
 func TestTraceDataToLogService(t *testing.T) {
@@ -67,7 +66,7 @@ func fillResource(resource pcommon.Resource) {
 	attrs.PutStr(string(conventions.HostNameKey), "xxx.et15")
 	attrs.PutStr(string(conventions.ContainerNameKey), "signup_aggregator")
 	attrs.PutStr(string(conventions.ContainerImageNameKey), "otel/signupaggregator")
-	attrs.PutStr(string(conventions.ContainerImageTagKey), "v1")
+	//attrs.PutStr(string(conventions.ContainerImageTagKey), "v1")
 	attrs.PutStr(string(conventions.CloudProviderKey), conventions.CloudProviderAWS.Value.AsString())
 	attrs.PutStr(string(conventions.CloudAccountIDKey), "999999998")
 	attrs.PutStr(string(conventions.CloudRegionKey), "us-west-2")
@@ -76,9 +75,9 @@ func fillResource(resource pcommon.Resource) {
 
 func fillHTTPClientSpan(span ptrace.Span) {
 	attributes := make(map[string]any)
-	attributes[string(conventions.HTTPMethodKey)] = http.MethodGet
-	attributes[string(conventions.HTTPURLKey)] = "https://api.example.com/users/junit"
-	attributes[string(conventions.HTTPStatusCodeKey)] = 200
+	//attributes[string(conventions.HTTPMethodKey)] = http.MethodGet
+	//attributes[string(conventions.HTTPURLKey)] = "https://api.example.com/users/junit"
+	//attributes[string(conventions.HTTPStatusCodeKey)] = 200
 	endTime := time.Unix(12300, 123456789)
 	startTime := endTime.Add(-90 * time.Second)
 	constructSpanAttributes(attributes).CopyTo(span.Attributes())
@@ -108,10 +107,10 @@ func fillHTTPClientSpan(span ptrace.Span) {
 
 func fillHTTPServerSpan(span ptrace.Span) {
 	attributes := make(map[string]any)
-	attributes[string(conventions.HTTPMethodKey)] = http.MethodGet
-	attributes[string(conventions.HTTPURLKey)] = "https://api.example.com/users/junit"
-	attributes[string(conventions.HTTPClientIPKey)] = "192.168.15.32"
-	attributes[string(conventions.HTTPStatusCodeKey)] = 200
+	//attributes[string(conventions.HTTPMethodKey)] = http.MethodGet
+	//attributes[string(conventions.HTTPURLKey)] = "https://api.example.com/users/junit"
+	//attributes[string(conventions.HTTPClientIPKey)] = "192.168.15.32"
+	//attributes[string(conventions.HTTPStatusCodeKey)] = 200
 	endTime := time.Unix(12300, 123456789)
 	startTime := endTime.Add(-90 * time.Second)
 	constructSpanAttributes(attributes).CopyTo(span.Attributes())

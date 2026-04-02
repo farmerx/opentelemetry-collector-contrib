@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/gogo/protobuf/proto"
 	clssdk "github.com/tencentcloud/tencentcloud-cls-sdk-go"
 	"go.opentelemetry.io/collector/pdata/ptrace"
+	"google.golang.org/protobuf/proto"
 
 	"github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal/tracetranslator"
 	"github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal/traceutil"

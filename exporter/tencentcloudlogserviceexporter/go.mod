@@ -3,7 +3,6 @@ module github.com/open-telemetry/opentelemetry-collector-contrib/exporter/tencen
 go 1.25.0
 
 require (
-	github.com/gogo/protobuf v1.3.2
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.140.1
 	github.com/stretchr/testify v1.11.1
 	github.com/tencentcloud/tencentcloud-cls-sdk-go v1.0.13

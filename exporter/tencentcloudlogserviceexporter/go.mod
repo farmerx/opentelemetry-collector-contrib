@@ -6,15 +6,15 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.149.0
 	github.com/stretchr/testify v1.11.1
 	github.com/tencentcloud/tencentcloud-cls-sdk-go v1.0.13
-	go.opentelemetry.io/collector/component v1.55.0
-	go.opentelemetry.io/collector/component/componenttest v0.149.0
+	go.opentelemetry.io/collector/component v1.55.1-0.20260402195938-76ede073ee8e
+	go.opentelemetry.io/collector/component/componenttest v0.149.1-0.20260402195938-76ede073ee8e
 	go.opentelemetry.io/collector/config/configopaque v1.55.0
 	go.opentelemetry.io/collector/confmap v1.55.0
 	go.opentelemetry.io/collector/confmap/xconfmap v0.149.0
 	go.opentelemetry.io/collector/exporter v1.55.0
 	go.opentelemetry.io/collector/exporter/exporterhelper v0.149.0
 	go.opentelemetry.io/collector/exporter/exportertest v0.149.0
-	go.opentelemetry.io/collector/pdata v1.55.0
+	go.opentelemetry.io/collector/pdata v1.55.1-0.20260402195938-76ede073ee8e
 	go.opentelemetry.io/otel v1.42.0
 	go.uber.org/zap v1.27.1
 	google.golang.org/protobuf v1.36.11
